@@ -159,6 +159,9 @@ namespace MonkeysMVVM.Services
 
     public class MonkeysService
     {
+        
+
+
         public MonkeysService() 
         {
             monkeys = new MonkeyList().Monkeys;
@@ -181,6 +184,10 @@ namespace MonkeysMVVM.Services
             monkeys.Remove(monkey);
         }
 
+        //public List<Monkey> ReturnMonkeyLocationList(string location)
+        //{
+           
+        //}
      
     }
 }
