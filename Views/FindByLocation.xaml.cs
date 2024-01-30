@@ -7,6 +7,8 @@ public partial class FindByLocation : ContentPage
 	public FindByLocation()
 	{
 		InitializeComponent();
-		this.BindingContext = FindByLocationViewModel();
+		//הקשר בין הויאו מודל לבין העמוד הראשי
+		//אומר בעצם שזה מחובר לויאו מודל של המצא לפי לוקיישן
+		this.BindingContext = new FindByLocationViewModel();
 	}
 }

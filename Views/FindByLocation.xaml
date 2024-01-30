@@ -1,12 +1,39 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MonkeysMVVM.Views.FindByLocation"
-             Title="FindByLocation">
+<ContentPage
+    x:Class="MonkeysMVVM.Views.FindByLocation"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:viewmodel="clr-namespace:MonkeysMVVM.ViewModels"
+    x:DataType="viewmodel:FindByLocationViewModel"
+    >
+    <!--  יוזינג רק בזאמל - קודם נותנים שם ואז את השם של התיקייה שמשתמשים בה  -->
+    <!--  לאחר מכן כותבים מאיפה רוצים את ההשלמה - במקרה הזה מפיינד ביי לוקיישן  -->
     <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+
+        <!--  באנטרי נחבר בין הטקסט לטקסט שיש בקאנטרי בויאו מודל  -->
+        <Entry
+            Placeholder="הכנס שם מדינה"
+            PlaceholderColor="LightPink"
+            Text="{Binding Country}" />
+
+        <!--  בבאטן נחבר בין הלחיצה על הכפתור לבין הפעולה שנכתוב על מה שזה עושה  -->
+        <Button Command="{Binding SearchByCountryCommand}" Text="חפש" />
+
+        <!--  ישים את כמות הקופים שנמצאו  -->
+        <Label>
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="  מספר הקופים שנמצאו" />
+                    <Span Text="{Binding NumMonkeysFound}" />
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+
+        <!--  נחבר את שם  של הקוף  -->
+        <Label Text="{Binding Name}" />
+
+        <!--  נחבר את האימג של הקוף  -->
+        <Image Source="{Binding ImageUrl}" />
+
     </VerticalStackLayout>
 </ContentPage>
