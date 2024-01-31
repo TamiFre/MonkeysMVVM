@@ -159,9 +159,6 @@ namespace MonkeysMVVM.Services
 
     public class MonkeysService
     {
-        
-
-
         public MonkeysService() 
         {
             monkeys = new MonkeyList().Monkeys;
