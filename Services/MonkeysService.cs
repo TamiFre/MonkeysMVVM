@@ -184,10 +184,11 @@ namespace MonkeysMVVM.Services
             monkeys.Remove(monkey);
         }
 
-        //public List<Monkey> ReturnMonkeyLocationList(string location)
-        //{
-           
-        //}
+        //פעולה שמחזירה רשימה של קופים שהלוקיישן שלהם שווה לקויישן
+        public List<Monkey> FindMonkeysByLocation(string location)
+        {
+            return monkeys.Where(x => x.Location == location).ToList();
+        }
      
     }
 }

@@ -4,11 +4,10 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:viewmodel="clr-namespace:MonkeysMVVM.ViewModels"
-    x:DataType="viewmodel:FindByLocationViewModel"
-    >
+    x:DataType="viewmodel:FindByLocationViewModel">
     <!--  יוזינג רק בזאמל - קודם נותנים שם ואז את השם של התיקייה שמשתמשים בה  -->
     <!--  לאחר מכן כותבים מאיפה רוצים את ההשלמה - במקרה הזה מפיינד ביי לוקיישן  -->
-    <VerticalStackLayout>
+    <VerticalStackLayout HorizontalOptions="Center">
 
         <!--  באנטרי נחבר בין הטקסט לטקסט שיש בקאנטרי בויאו מודל  -->
         <Entry
@@ -20,7 +19,7 @@
         <Button Command="{Binding SearchByCountryCommand}" Text="חפש" />
 
         <!--  ישים את כמות הקופים שנמצאו  -->
-        <Label>
+        <Label HorizontalOptions="Center">
             <Label.FormattedText>
                 <FormattedString>
                     <Span Text="  מספר הקופים שנמצאו" />
@@ -33,7 +32,10 @@
         <Label Text="{Binding Name}" />
 
         <!--  נחבר את האימג של הקוף  -->
-        <Image Source="{Binding ImageUrl}" />
+        <Image
+            HeightRequest="200"
+            Source="{Binding ImageUrl}"
+            WidthRequest="200" />
 
     </VerticalStackLayout>
 </ContentPage>
